@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -x
 # Set default dates
 default_since_date=$(date -d "1 week ago" +%Y-%m-%d)
 default_until_date=$(date +%Y-%m-%d)
