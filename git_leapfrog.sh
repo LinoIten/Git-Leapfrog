@@ -31,12 +31,12 @@ awk -v days="$days" '$1 ~ /^[0-9]+$/ && $2 ~ /^[0-9]+$/ {
     added+=$1
     deleted+=$2
 } END {
-    print "\n From " "'$since_date'" " to " "'$until_date'" " (" days " days)\n"
+    print "\nFrom " "'$since_date'" " to " "'$until_date'" " (" days " days)\n"
     print "🔵 Added lines: " added
-    print "🔴 Deleted lined: " deleted "\n"
+    print "🔴 Deleted lines: " deleted "\n"
     if (days > 0) {
         print "🚀 Average lines changed per day: " (added+deleted)/days
     }
 
-    print "\n summarized by 🐸 Git Leapfrog by Lino Iten"
+    print "\n summarized by 🐸 Git Leapfrog"
 }'
