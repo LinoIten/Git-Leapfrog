@@ -16,12 +16,12 @@ until_date=${until_date:-$default_until_date}
 read -p "Enter branch name [default: main]: " branch_name
 branch_name=${branch_name:-main}
 
-# Calculate the number of days between since_date and until_date
-days=$(( ($(date -d "$until_date" +%s) - $(date -d "$since_date" +%s)) / 86400 + 1 ))
+# Calculate the number of days between since_date and until_date, accounting for both dates being included
+days=$(( ( $(date -d "$until_date" +%s) - $(date -d "$since_date" +%s) ) / 86400 + 1 ))
 
-# Check for valid days calculation
-if [ "$days" -le 0 ]; then
-    echo "Error: 'until_date' must be after 'since_date'."
+# Validate that days calculation doesn't result in an error
+if ! [[ "$days" =~ ^[0-9]+$ ]]; then
+    echo "Error calculating the number of days. Please check the entered dates."
     exit 1
 fi
 
@@ -30,11 +30,12 @@ git log --since="$since_date" --until="$until_date" --branches="$branch_name" --
 awk -v days="$days" '$1 ~ /^[0-9]+$/ && $2 ~ /^[0-9]+$/ {
     added+=$1
     deleted+=$2
+    total+=($1+$2)
 } END {
     print "✅ Added lines: " added "\n❌ Deleted lines: " deleted
     if (days > 0) {
-        print "📊 Average lines changed per day: " (added+deleted)/days
+        print "📊 Average lines changed per day: " (total/days)
     } else {
-        print "📊 Average lines changed per day: Not available due to date range"
+        print "📊 Average lines changed per day: Not applicable"
     }
 }'
