@@ -13,4 +13,4 @@ Jump through your Git history with ease! `GitLeapfrog` is a nifty tool that lets
 To use `GitLeapfrog`, run the following command in your terminal. Make sure you're in your project's Git repository directory.
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/LinoIten/GitLeapfrog/main/git_summary_interactive.sh | bash
+curl -sSL https://raw.githubusercontent.com/LinoIten/Git-Leapfrog/main/git_leapfrog.sh | bash
