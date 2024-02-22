@@ -1,5 +1,7 @@
 # GitLeapfrog 🐸
 
+![image](https://github.com/LinoIten/Git-Leapfrog/assets/48647260/c88f21f2-28a4-4639-abc7-476bb4c1356f)
+
 Jump through your Git history with ease! `GitLeapfrog` is a nifty tool that lets you leap over the logs to see the line changes in your projects over time. Perfect for developers who love to keep track of their code changes in a fun and efficient way. 🚀
 
 ## Features 🌟
