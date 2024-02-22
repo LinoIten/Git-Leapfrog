@@ -31,7 +31,7 @@ awk -v days="$days" '$1 ~ /^[0-9]+$/ && $2 ~ /^[0-9]+$/ {
     added+=$1
     deleted+=$2
 } END {
-    print "🌟 Added lines: " added "\n🗑️ Deleted lines: " deleted
+    print "🌟 Added lines: " added "\n 🗑️  Deleted lines: " deleted
     if (days > 0) {
         print "🐸 Average lines changed per day: " (added+deleted)/days
     }
