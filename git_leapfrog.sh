@@ -16,7 +16,7 @@ read -p "Enter branch name [default: main]: " branch_name
 branch_name=${branch_name:-main}
 
 # Execute git log command with the provided or default parameters
-git log --since="$since_date" --until="$until_date" --oneline --numstat $branch_name | \
+git log --since="$since_date"  --branches="$branch_name" --until="$until_date" --oneline --numstat e$branch_name | \
 awk '$1 ~ /^[0-9]+$/ && $2 ~ /^[0-9]+$/ {
     added+=$1
     deleted+=$2

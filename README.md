@@ -14,3 +14,14 @@ To use `GitLeapfrog`, run the following command in your terminal. Make sure you'
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/LinoIten/Git-Leapfrog/main/git_leapfrog.sh | bash
+```
+
+or using wget
+```bash
+wget -qO- https://raw.githubusercontent.com/LinoIten/Git-Leapfrog/main/git_leapfrog.sh | bash
+```
+
+## Acknowledgments 🙏
+
+- [Bash](https://www.gnu.org/software/bash/)
+- [Git](https://git-scm.com/)
